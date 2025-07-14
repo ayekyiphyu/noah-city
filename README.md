@@ -61,9 +61,9 @@ cp .env.example .env.local
 ```
 Add your environment variables:
 ```
-DATABASE_URL=your_database_url
-NEXTAUTH_SECRET=your_secret_key
-EMAIL_SERVICE_API_KEY=your_email_api_key
+DATABASE_URL=""
+NEXTAUTH_SECRET=""
+EMAIL_SERVICE_API_KEY=""
 ```
 
 4. Run the development server
