@@ -24,12 +24,12 @@ Single-page application with the following sections:
 
 ## Features
 
-- ⚡ Server-side rendering with Next.js
-- 📱 Responsive design for all devices
-- 🛍️ Product management system
-- 📧 Contact form with backend processing
-- 🌐 SEO optimized for Myanmar market
-- 🚀 Fast loading and performance optimized
+- Server-side rendering with Next.js
+- Responsive design for all devices
+- Product management system
+- Contact form with backend processing
+- SEO optimized for Myanmar market
+- Fast loading and performance optimized
 
 ## Getting Started
 
