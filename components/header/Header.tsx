@@ -1,7 +1,9 @@
+'use client';
+
 export default function Header() {
     return (
-        <div className="primary-color">
-            <p className="">70% discount on all products!</p>
+        <div className="bg-red-500 dark:bg-gray-900 shadow-md">
+            test
         </div>
     )
 }
