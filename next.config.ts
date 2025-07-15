@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  appDir: true,
+  devIndicators: false,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
