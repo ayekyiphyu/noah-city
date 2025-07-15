@@ -1,8 +1,5 @@
 /* app/globals.css - Fixed Global CSS with default styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -353,6 +350,7 @@ img {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
