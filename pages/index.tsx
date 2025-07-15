@@ -1,10 +1,12 @@
 'use client';
 
+import Header from "@/components/header/Header";
+
 export default function Home() {
     return (
         <div>
-            <h1>Welcome to Noah City</h1>
-            <p>This is a simple Next.js application.</p>
+            <Header />
         </div>
+
     );
 }
