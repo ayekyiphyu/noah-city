@@ -1,0 +1,40 @@
+# Aggressively hide HTML/CSS from language detection
+*.html linguist-vendored
+*.htm linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.sass linguist-vendored
+
+# Mark all common web assets as vendored
+*.svg linguist-vendored
+*.png linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.gif linguist-vendored
+*.ico linguist-vendored
+*.woff linguist-vendored
+*.woff2 linguist-vendored
+*.ttf linguist-vendored
+*.eot linguist-vendored
+
+# Mark build/generated directories
+public/* linguist-vendored
+.next/* linguist-vendored
+out/* linguist-vendored
+build/* linguist-vendored
+dist/* linguist-vendored
+node_modules/* linguist-vendored
+
+# Force TypeScript/JavaScript recognition
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.mjs linguist-language=JavaScript
+
+# Mark config files appropriately
+*.json linguist-language=JSON
+*.md linguist-documentation
+*.mdx linguist-documentation
+
+* linguist-language=TypeScript
