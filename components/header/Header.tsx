@@ -2,8 +2,8 @@
 
 export default function Header() {
     return (
-        <div className="bg-red-500 dark:bg-gray-900 shadow-md">
-            test
+        <div className="primary text-white text-center py-2 text-sm font-light tracking-wide">
+            FREE SHIPPING ON ORDERS OVER $200
         </div>
     )
 }
