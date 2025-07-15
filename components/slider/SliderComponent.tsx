@@ -4,7 +4,7 @@ import SlickSlider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
-export default function Slider() {
+export default function SliderComponent() {
     const settings = {
         dots: true,
         infinite: true,
