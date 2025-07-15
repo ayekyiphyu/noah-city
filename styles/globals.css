@@ -62,7 +62,7 @@
   --popover-foreground: #1e293b;
 
   /* Beautiful Primary Colors - Matching Header/Footer Blue */
-  --primary: #4f8cfb;
+  --primary: #000000;
   --primary-foreground: #ffffff;
 
   /* Elegant Secondary Colors - Complementary to main blue */
@@ -86,16 +86,7 @@
   --input: #f1f5f9;
   --ring: #4f8cfb;
 
-  /* Beautiful Chart Colors - Coordinated with header blue */
-  --chart-1: #4f8cfb;
-  /* Your header blue */
-  --chart-2: #10b981;
-  /* Emerald */
-  --chart-3: #f59e0b;
-  /* Amber */
-  --chart-4: #ef4444;
-  /* Red */
-  --chart-5: #8b5cf6;
+
   /* Violet */
 
   /* Enhanced Sidebar Colors - Matching theme */
