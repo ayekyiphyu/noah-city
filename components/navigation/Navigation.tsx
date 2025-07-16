@@ -1,23 +1,9 @@
 'use client';
 
+import { NavigationItem, SearchFilters } from "@/types/type";
 import { Facebook, Filter, Instagram, Menu, Search, X } from "lucide-react";
 import router from "next/router";
-
 import { useEffect, useRef, useState } from 'react';
-
-interface SearchFilters {
-    category: string;
-    priceRange: string;
-    sortBy: string;
-}
-
-interface NavigationItem {
-    name: string;
-    href: string;
-    submenu?: { name: string; href: string; }[];
-}
-
-
 
 export default function MainHeader() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -39,8 +25,8 @@ export default function MainHeader() {
             name: 'CLOTHING',
             href: '#clothing',
             submenu: [
+                { name: 'Top', href: '#clothing/top' },
                 { name: 'Bottom', href: '#clothing/bottom' },
-                { name: 'Outer', href: '#clothing/outer' },
                 { name: 'Family Set', href: '#clothing/family-set' }
             ]
         },
