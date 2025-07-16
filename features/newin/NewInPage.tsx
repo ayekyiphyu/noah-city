@@ -19,7 +19,7 @@ export default function NewInPage() {
             id: 'noah-collections',
             title: "Noah Collections",
             subtitle: "Curated pieces for modern lifestyle",
-            image: "assests/dummy01.jpg",
+            image: "assests/dummy03.png",
             category: "Collections",
             type: 'medium'
         },
@@ -27,7 +27,7 @@ export default function NewInPage() {
             id: 'sale-collection',
             title: "Sale Collection",
             subtitle: "Up to 50% off selected items",
-            image: "assests/dummy01.jpg",
+            image: "assests/dummy03.png",
             category: "Sale",
             type: 'medium',
             badge: "SALE"
@@ -40,7 +40,7 @@ export default function NewInPage() {
             name: "Premium Cotton Tee",
             price: 29.99,
             originalPrice: 39.99,
-            image: "assests/dummy01.jpg",
+            image: "assests/dummy03.png",
             isNew: true,
             category: "Tops"
         },
@@ -48,7 +48,7 @@ export default function NewInPage() {
             id: 2,
             name: "Casual Denim Jacket",
             price: 89.99,
-            image: "assests/dummy02.jpg",
+            image: "assests/dummy03.png",
             isNew: true,
             category: "Outerwear"
         },
@@ -56,7 +56,7 @@ export default function NewInPage() {
             id: 3,
             name: "Comfort Fit Joggers",
             price: 49.99,
-            image: "assests/dummy01.jpg",
+            image: "assests/dummy03.png",
             isNew: true,
             category: "Bottoms"
         },
@@ -64,7 +64,7 @@ export default function NewInPage() {
             id: 4,
             name: "Vintage Graphic Hoodie",
             price: 69.99,
-            image: "assests/dummy02.jpg",
+            image: "assests/dummy03.png",
             isNew: true,
             category: "Hoodies"
         }
