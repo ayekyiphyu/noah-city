@@ -44,7 +44,8 @@ export default function MainHeader() {
                 { name: 'Family Set', href: '#clothing/family-set' }
             ]
         },
-        { name: 'CONTACT', href: '#contact' }
+        { name: 'CONTACT', href: '#contact' },
+        { name: 'ACCESSORIES', href: '#accessories' }
     ];
 
     // Close mobile menu when screen size changes
