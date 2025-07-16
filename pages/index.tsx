@@ -1,7 +1,7 @@
 'use client';
 
 import Header from "@/components/header/Header";
-import MainHeader from "@/components/header/MainHeader";
+import MainHeader from "@/components/navigation/Navigation";
 import SliderComponent from "@/components/slider/SliderComponent";
 
 export default function Home() {

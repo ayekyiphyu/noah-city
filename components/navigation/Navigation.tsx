@@ -9,11 +9,18 @@ interface SearchFilters {
     sortBy: string;
 }
 
+interface NavigationItem {
+    name: string;
+    href: string;
+    submenu?: { name: string; href: string; }[];
+}
+
 export default function MainHeader() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [filters, setFilters] = useState<SearchFilters>({
         category: 'all',
         priceRange: 'all',
@@ -21,11 +28,27 @@ export default function MainHeader() {
     });
     const searchInputRef = useRef<HTMLInputElement>(null);
 
+    const navigationItems: NavigationItem[] = [
+        { name: 'HOME', href: '#home' },
+        { name: 'NEW IN', href: '#new' },
+        {
+            name: 'CLOTHING',
+            href: '#clothing',
+            submenu: [
+                { name: 'Bottom', href: '#clothing/bottom' },
+                { name: 'Outer', href: '#clothing/outer' },
+                { name: 'Family Set', href: '#clothing/family-set' }
+            ]
+        },
+        { name: 'CONTACT', href: '#contact' }
+    ];
+
     // Close mobile menu when screen size changes
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
                 setIsMobileMenuOpen(false);
+                setActiveDropdown(null);
             }
         };
         window.addEventListener('resize', handleResize);
@@ -38,6 +61,15 @@ export default function MainHeader() {
             searchInputRef.current.focus();
         }
     }, [isSearchOpen]);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = () => {
+            setActiveDropdown(null);
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, []);
 
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
@@ -69,20 +101,27 @@ export default function MainHeader() {
         });
     };
 
+    // Handle dropdown menu
+    const handleMouseEnter = (itemName: string) => {
+        setActiveDropdown(itemName);
+    };
+
+    const handleMouseLeave = () => {
+        setActiveDropdown(null);
+    };
+
+    const toggleMobileDropdown = (itemName: string) => {
+        setActiveDropdown(activeDropdown === itemName ? null : itemName);
+    };
+
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+        setActiveDropdown(null); // Close any open dropdowns
         if (isSearchOpen) {
             setIsSearchOpen(false);
             setShowFilters(false);
         }
     };
-
-    const navigationItems = [
-        { name: 'HOME', href: '#home' },
-        { name: 'NEW IN', href: '#new' },
-        { name: 'LIFESTYLE', href: '#lifestyle' },
-        { name: 'CONTACT', href: '#contact' }
-    ];
 
     return (
         <div>
@@ -206,12 +245,9 @@ export default function MainHeader() {
                                                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                                             >
                                                 <option value="all">All Categories</option>
-                                                <option value="onesies">Onesies</option>
-                                                <option value="rompers">Rompers</option>
-                                                <option value="sleepwear">Sleepwear</option>
-                                                <option value="summer">Summer Wear</option>
-                                                <option value="winter">Winter Wear</option>
-                                                <option value="formal">Formal</option>
+                                                <option value="bottom">Bottom</option>
+                                                <option value="outer">Outer</option>
+                                                <option value="family-set">Family Set</option>
                                             </select>
                                         </div>
 
@@ -259,17 +295,50 @@ export default function MainHeader() {
             </header>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:block bg-white border-b border-gray-100">
+            <nav className="hidden md:block bg-white border-b border-gray-100 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-center space-x-12 py-4">
                         {navigationItems.map((item) => (
-                            <a
+                            <div
                                 key={item.name}
-                                href={item.href}
-                                className="text-sm font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors"
+                                className="relative"
+                                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
+                                onMouseLeave={() => item.submenu && handleMouseLeave()}
                             >
-                                {item.name}
-                            </a>
+                                <a
+                                    href={item.href}
+                                    className="text-sm font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors flex items-center gap-1"
+                                >
+                                    {item.name}
+                                    {item.submenu && (
+                                        <svg
+                                            className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''
+                                                }`}
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    )}
+                                </a>
+
+                                {/* Desktop Dropdown Menu */}
+                                {item.submenu && activeDropdown === item.name && (
+                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                        <div className="py-2">
+                                            {item.submenu.map((subItem) => (
+                                                <a
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#6B7461] transition-colors"
+                                                >
+                                                    {subItem.name}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -282,14 +351,52 @@ export default function MainHeader() {
                         {/* Mobile Navigation Links */}
                         <nav className="space-y-4">
                             {navigationItems.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block text-base font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors py-2"
-                                >
-                                    {item.name}
-                                </a>
+                                <div key={item.name}>
+                                    {item.submenu ? (
+                                        // Navigation item with submenu
+                                        <div>
+                                            <button
+                                                onClick={() => toggleMobileDropdown(item.name)}
+                                                className="flex items-center justify-between w-full text-base font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors py-2"
+                                            >
+                                                <span>{item.name}</span>
+                                                <svg
+                                                    className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''
+                                                        }`}
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                >
+                                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                            </button>
+
+                                            {/* Mobile Submenu */}
+                                            {activeDropdown === item.name && (
+                                                <div className="ml-4 mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
+                                                    {item.submenu.map((subItem) => (
+                                                        <a
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            onClick={() => setIsMobileMenuOpen(false)}
+                                                            className="block text-sm text-gray-600 hover:text-[#6B7461] transition-colors py-1"
+                                                        >
+                                                            {subItem.name}
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        // Regular navigation item
+                                        <a
+                                            href={item.href}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className="block text-base font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors py-2"
+                                        >
+                                            {item.name}
+                                        </a>
+                                    )}
+                                </div>
                             ))}
                         </nav>
 
