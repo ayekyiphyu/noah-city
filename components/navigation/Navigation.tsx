@@ -63,7 +63,7 @@ export default function MainHeader() {
     }, [isSearchOpen]);
 
     const dropdownRef = useRef<HTMLDivElement>(null)
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside for mobile is OK
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
