@@ -191,13 +191,13 @@ export default function NewInPage() {
                 <div>
                     <div className="flex items-center justify-between mb-8">
                         <h2 className="text-2xl md:text-3xl font-light text-gray-900">
-                            Latest Arrivals
+                            CLOTHING
                         </h2>
-                        {/* later will be needs this view all links */}
-                        {/* <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center gap-2 transition-colors duration-200">
+
+                        <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center gap-2 transition-colors duration-200">
                             View All
                             <ArrowRight className="w-4 h-4" />
-                        </button> */}
+                        </button>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
