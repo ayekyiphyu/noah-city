@@ -110,14 +110,14 @@ export default function MainHeader() {
         });
     };
 
-    // Handle dropdown menu
-    const handleMouseEnter = (itemName: string) => {
-        setActiveDropdown(itemName);
+    const handleSubmenuClick = (href: string) => {
+        // Navigate to submenu item
+        setActiveDropdown(null);
+        setIsMobileMenuOpen(false);
+        // You can add navigation logic here
+        console.log('Navigating to:', href);
     };
 
-    const handleMouseLeave = () => {
-        setActiveDropdown(null);
-    };
 
     const toggleMobileDropdown = (itemName: string) => {
         setActiveDropdown(activeDropdown === itemName ? null : itemName);
@@ -132,6 +132,21 @@ export default function MainHeader() {
         }
     };
 
+    const toggleDropdown = (itemName: string, event: React.MouseEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setActiveDropdown(activeDropdown === itemName ? null : itemName);
+    };
+
+    const handleNavClick = (href: string, hasSubmenu: boolean, event: React.MouseEvent) => {
+        if (hasSubmenu) {
+            event.preventDefault();
+            return;
+        }
+        // Navigate to the link
+        setActiveDropdown(null);
+        setIsMobileMenuOpen(false);
+    };
     return (
         <div>
             <header className="bg-white border-b border-gray-100 relative">
@@ -304,24 +319,29 @@ export default function MainHeader() {
             </header>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:block bg-white border-b border-gray-100 relative">
+            <nav className="hidden md:block bg-white border-b border-gray-100 relative z-40">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-center space-x-12 py-4">
                         {navigationItems.map((item) => (
                             <div
                                 key={item.name}
                                 className="relative"
-                                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
-                                onMouseLeave={() => item.submenu && handleMouseLeave()}
+                                ref={item.submenu ? dropdownRef : undefined}
                             >
-                                <a
-                                    href={item.href}
-                                    className="text-sm font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-colors flex items-center gap-1"
+                                <button
+                                    onClick={(e) => {
+                                        if (item.submenu) {
+                                            toggleDropdown(item.name, e);
+                                        } else {
+                                            handleNavClick(item.href, false, e);
+                                        }
+                                    }}
+                                    className="text-sm font-light text-gray-700 hover:text-[#6B7461] tracking-wide transition-all duration-300 flex items-center gap-1 py-2 px-3 rounded-md hover:bg-gray-50"
                                 >
                                     {item.name}
                                     {item.submenu && (
                                         <svg
-                                            className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''
+                                            className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''
                                                 }`}
                                             fill="currentColor"
                                             viewBox="0 0 20 20"
@@ -329,20 +349,23 @@ export default function MainHeader() {
                                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
                                     )}
-                                </a>
+                                </button>
 
                                 {/* Desktop Dropdown Menu */}
                                 {item.submenu && activeDropdown === item.name && (
-                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 animate-in slide-in-from-top duration-300">
                                         <div className="py-2">
-                                            {item.submenu.map((subItem) => (
-                                                <a
+                                            {item.submenu.map((subItem, index) => (
+                                                <button
                                                     key={subItem.name}
-                                                    href={subItem.href}
-                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#6B7461] transition-colors"
+                                                    onClick={() => handleSubmenuClick(subItem.href)}
+                                                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#6B7461] transition-all duration-200"
+                                                    style={{
+                                                        animationDelay: `${index * 50}ms`
+                                                    }}
                                                 >
                                                     {subItem.name}
-                                                </a>
+                                                </button>
                                             ))}
                                         </div>
                                     </div>
