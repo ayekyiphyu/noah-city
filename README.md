@@ -190,6 +190,10 @@ CLOUDINARY_URL=  # For image uploads
 
 This project is for commercial use by [Noah-city].
 
-Developer by AYE KYI PHYU
+- Owner : THINN YU SAN
+
+- Developer : AYE KYI PHYU
+
+- Copyright : noah-city since 2025
 
 ---

@@ -23,3 +23,6 @@ export interface Product {
   createdAt: string;
   updatedAt: string;
 }
+
+
+//for newin Products
