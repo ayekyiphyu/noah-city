@@ -1,3 +1,16 @@
+//for navigation
+export interface SearchFilters {
+  category: string;
+  priceRange: string;
+  sortBy: string;
+}
+
+export interface NavigationItem {
+  name: string;
+  href: string;
+  submenu?: { name: string; href: string }[];
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -10,4 +23,3 @@ export interface Product {
   createdAt: string;
   updatedAt: string;
 }
-
