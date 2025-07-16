@@ -1,6 +1,8 @@
 'use client';
 
 import { Facebook, Filter, Instagram, Menu, Search, X } from "lucide-react";
+import router from "next/router";
+
 import { useEffect, useRef, useState } from 'react';
 
 interface SearchFilters {
@@ -14,6 +16,8 @@ interface NavigationItem {
     href: string;
     submenu?: { name: string; href: string; }[];
 }
+
+
 
 export default function MainHeader() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -116,6 +120,7 @@ export default function MainHeader() {
         setIsMobileMenuOpen(false);
         // You can add navigation logic here
         console.log('Navigating to:', href);
+        router.push(href);
     };
 
 
@@ -357,6 +362,7 @@ export default function MainHeader() {
                                         <div className="py-2">
                                             {item.submenu.map((subItem, index) => (
                                                 <button
+
                                                     key={subItem.name}
                                                     onClick={() => handleSubmenuClick(subItem.href)}
                                                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#6B7461] transition-all duration-200"
