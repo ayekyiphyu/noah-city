@@ -16,10 +16,15 @@ export default function SliderComponent() {
     return (
         <div>
             <SlickSlider {...settings}>
-                <div>This is the Slider Component.</div>
-                <div>Slider1</div>
-                <div>Slider2</div>
-                <div>Slider3</div>
+                <div className='slider-01'>
+                    <img src="assests/slider-img01.jpg" alt="Slider 1" className="w-full h-auto" />
+                </div>
+                <div className='slider-02'>
+                    <img src="assests/slider-img02.jpg" alt="Slider 2" className="w-full h-auto" />
+                </div>
+                <div className='slider-03'>
+                    <img src="assests/slider-img03.jpg" alt="Slider 3" className="w-full h-auto" />
+                </div>
             </SlickSlider>
         </div>
     );
