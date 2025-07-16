@@ -171,7 +171,7 @@ export default function MainHeader() {
                         {/* Logo */}
                         <div className="flex-1 flex justify-center">
                             <div className="text-center">
-                                <h1 className="text-2xl font-light text-red tracking-wide">
+                                <h1 className="text-2xl font-light text-black tracking-wide font-bold">
                                     NOAH CITY
                                 </h1>
                                 <p className="text-xs text-gray-500 tracking-widest uppercase mt-1">
