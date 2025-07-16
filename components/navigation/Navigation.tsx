@@ -62,14 +62,23 @@ export default function MainHeader() {
         }
     }, [isSearchOpen]);
 
+    const dropdownRef = useRef<HTMLDivElement>(null)
     // Close dropdown when clicking outside
     useEffect(() => {
-        const handleClickOutside = () => {
-            setActiveDropdown(null);
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setActiveDropdown(null);
+            }
         };
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, []);
+
+        if (activeDropdown) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [activeDropdown]);
 
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
