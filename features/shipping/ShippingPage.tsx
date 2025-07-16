@@ -29,10 +29,10 @@ export default function ShippingPage() {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                            className="text-center border-1 bg-secondary p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
                         >
-                            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <feature.icon className="w-8 h-8 text-gray-600" />
+                            <div className="w-16 h-16 common text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                                <feature.icon className="w-8 h-8 text-black-600" />
                             </div>
                             <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                             <p className="text-gray-600">{feature.description}</p>
