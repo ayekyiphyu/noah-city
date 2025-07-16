@@ -94,12 +94,8 @@ export default function MainHeader() {
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
-        // Implement your search logic here
         console.log('Search query:', searchQuery);
         console.log('Filters:', filters);
-
-        // You can call your search API here
-        // searchProducts(searchQuery, filters);
     };
 
     const handleFilterChange = (key: keyof SearchFilters, value: string) => {
