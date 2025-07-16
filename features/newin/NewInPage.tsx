@@ -11,7 +11,7 @@ export default function NewInPage() {
             id: 'trending-2025',
             title: "What's trending in 2025",
             subtitle: "Discover the hottest styles and must-have pieces",
-            image: "/images/trending-2025.jpg",
+            image: "assests/dummy01.jpg",
             category: "Featured",
             type: 'large'
         },
@@ -19,7 +19,7 @@ export default function NewInPage() {
             id: 'noah-collections',
             title: "Noah Collections",
             subtitle: "Curated pieces for modern lifestyle",
-            image: "/images/noah-collections.jpg",
+            image: "assests/dummy01.jpg",
             category: "Collections",
             type: 'medium'
         },
@@ -27,7 +27,7 @@ export default function NewInPage() {
             id: 'sale-collection',
             title: "Sale Collection",
             subtitle: "Up to 50% off selected items",
-            image: "/images/sale-collection.jpg",
+            image: "assests/dummy01.jpg",
             category: "Sale",
             type: 'medium',
             badge: "SALE"
@@ -40,7 +40,7 @@ export default function NewInPage() {
             name: "Premium Cotton Tee",
             price: 29.99,
             originalPrice: 39.99,
-            image: "/images/cotton-tee.jpg",
+            image: "assests/dummy01.jpg",
             isNew: true,
             category: "Tops"
         },
@@ -48,7 +48,7 @@ export default function NewInPage() {
             id: 2,
             name: "Casual Denim Jacket",
             price: 89.99,
-            image: "/images/denim-jacket.jpg",
+            image: "assests/dummy02.jpg",
             isNew: true,
             category: "Outerwear"
         },
@@ -56,7 +56,7 @@ export default function NewInPage() {
             id: 3,
             name: "Comfort Fit Joggers",
             price: 49.99,
-            image: "/images/joggers.jpg",
+            image: "assests/dummy01.jpg",
             isNew: true,
             category: "Bottoms"
         },
@@ -64,7 +64,7 @@ export default function NewInPage() {
             id: 4,
             name: "Vintage Graphic Hoodie",
             price: 69.99,
-            image: "/images/hoodie.jpg",
+            image: "assests/dummy02.jpg",
             isNew: true,
             category: "Hoodies"
         }
@@ -122,7 +122,7 @@ export default function NewInPage() {
                                     <p className="text-lg text-gray-200 mb-6 max-w-md mx-auto">
                                         {featuredItems[0].subtitle}
                                     </p>
-                                    <button className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+                                    <button className="inline-flex items-center gap-2 text-white common text-gray-900 px-6 py-3 rounded-lg font-medium  ">
                                         Explore Now
                                         <ArrowRight className="w-4 h-4" />
                                     </button>
@@ -172,7 +172,7 @@ export default function NewInPage() {
                                         <p className="text-sm text-gray-200 mb-3">
                                             {item.subtitle}
                                         </p>
-                                        <button className="text-sm font-medium hover:underline flex items-center gap-1 mx-auto">
+                                        <button className="text-sm font-medium  hover:underline flex items-center gap-1 mx-auto">
                                             Shop Now
                                             <ArrowRight className="w-3 h-3" />
                                         </button>
