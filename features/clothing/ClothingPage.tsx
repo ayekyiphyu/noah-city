@@ -1,38 +1,8 @@
 'use client';
 
 import { Heart, ShoppingBag } from 'lucide-react';
-import { useState } from 'react';
 
 export default function ClothingPage() {
-    const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-
-    const featuredItems = [
-        {
-            id: 'trending-2025',
-            title: "What's trending in 2025",
-            subtitle: "Discover the hottest styles and must-have pieces",
-            image: "assests/dummy01.jpg",
-            category: "Featured",
-            type: 'large'
-        },
-        {
-            id: 'noah-collections',
-            title: "Noah Collections",
-            subtitle: "Curated pieces for modern lifestyle",
-            image: "assests/dummy03.png",
-            category: "Collections",
-            type: 'medium'
-        },
-        {
-            id: 'sale-collection',
-            title: "Sale Collection",
-            subtitle: "Up to 50% off selected items",
-            image: "assests/dummy03.png",
-            category: "Sale",
-            type: 'medium',
-            badge: "SALE"
-        }
-    ];
 
     const newProducts = [
         {
