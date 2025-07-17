@@ -7,7 +7,7 @@ import SliderComponent from "@/components/slider/SliderComponent";
 import AccessoriesPage from "@/features/accessories/accessoriesPage";
 import NewInPage from "@/features/newin/NewInPage";
 import ShippingPage from "@/features/shipping/ShippingPage";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -38,8 +38,8 @@ export default function Home() {
             {/* Main Content */}
             <main className="w-full">
                 {/* Hero Slider Section */}
-                <section className="w-full h-screen max-h-[800px] overflow-hidden relative">
-                    <div className="w-full h-full">
+                <section className="w-full  max-h-[800px] overflow-hidden relative">
+                    <div className="w-full">
                         <SliderComponent />
                     </div>
 
@@ -47,9 +47,7 @@ export default function Home() {
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                         <div className={`text-center text-white transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                             }`}>
-                            <h1 className="text-4xl md:text-6xl font-light mb-4 tracking-wide">
-                                NOAH CITY
-                            </h1>
+
                             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto px-4">
                                 Discover premium lifestyle clothing that combines comfort, style, and quality for the modern family
                             </p>
