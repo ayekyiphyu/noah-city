@@ -9,51 +9,51 @@ export default function AccessoriesPage() {
     const accessories = [
         {
             id: 1,
-            name: "Hat",
+            name: "Family Set Jewelry",
             price: "$299",
             category: "Jewelry",
             popular: true,
-            image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=300&h=300&fit=crop&crop=center"
+            image: "assests/dummy06.jpg"
         },
         {
             id: 2,
-            name: "Silk Scarf",
+            name: "Baby Scarf",
             price: "$89",
             category: "Scarves",
             popular: false,
-            image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=300&h=300&fit=crop&crop=center"
+            image: "assests/dummy01.jpg"
         },
         {
             id: 3,
-            name: "Leather Handbag",
+            name: "Baby Diaper Bag",
             price: "$459",
             category: "Bags",
             popular: true,
-            image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center"
+            image: "assests/dummy02.jpg"
         },
         {
             id: 4,
-            name: "Gold Bracelet",
+            name: "Baby Blanket",
             price: "$199",
-            category: "Jewelry",
+            category: "Blankets",
             popular: false,
-            image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=300&h=300&fit=crop&crop=center"
+            image: "assests/dummy03.png"
         },
         {
             id: 5,
-            name: "Sunglasses",
+            name: "Bays Sunglasses",
             price: "$149",
-            category: "Eyewear",
+            category: "Sunglasses",
             popular: true,
-            image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop&crop=center"
+            image: "assests/dummy04.jpg"
         },
         {
             id: 6,
-            name: "Cashmere Gloves",
+            name: "Baby gloves",
             price: "$79",
-            category: "Accessories",
+            category: "gloves",
             popular: false,
-            image: "assests/dummy03.png"
+            image: "assests/dummy05.jpg"
         }
     ];
 
@@ -96,9 +96,9 @@ export default function AccessoriesPage() {
                                 </div>
 
                                 {/* Animated Background Pattern */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="absolute top-4 right-4 w-16 sm:w-20 h-16 sm:h-20 bg-purple-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
-                                    <div className="absolute bottom-4 left-4 w-12 sm:w-16 h-12 sm:h-16 bg-pink-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700 delay-100"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                    <div className="absolute top-4 right-4 w-16 sm:w-20 h-16 sm:h-20 bg-gray-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+                                    <div className="absolute bottom-4 left-4 w-12 sm:w-16 h-12 sm:h-16 bg-common-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700 delay-100"></div>
                                 </div>
 
                                 {/* Content */}
@@ -133,7 +133,7 @@ export default function AccessoriesPage() {
                                     <button className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-lg">
                                         <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
                                     </button>
-                                    <button className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                    <button className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r common rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
                                         <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                                     </button>
                                     <button className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-lg">
@@ -150,7 +150,7 @@ export default function AccessoriesPage() {
 
                 {/* Load More Button */}
                 <div className="text-center mt-8 sm:mt-12 lg:mt-16">
-                    <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto text-sm sm:text-base">
+                    <button className="px-6 sm:px-8 py-3 sm:py-4 tertiary text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto text-sm sm:text-base">
                         <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                         Load More Accessories
                     </button>
