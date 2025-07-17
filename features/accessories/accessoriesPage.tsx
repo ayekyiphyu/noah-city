@@ -13,47 +13,55 @@ export default function AccessoriesPage() {
             price: "$299",
             category: "Jewelry",
             popular: true,
-            image: "assests/dummy03.png"
+            image: "assests/dumy11.jpg"
         },
         {
             id: 2,
-            name: "Baby Scarf",
+            name: "Baby Hat",
             price: "$89",
-            category: "Scarves",
+            category: "Hats",
             popular: false,
-            image: "assests/dummy03.png"
+            image: "assests/dumy12.jpg"
         },
         {
-            id: 3,
+            id: 4,
+            name: "Baby scarf",
+            price: "$459",
+            category: "Scarves",
+            popular: true,
+            image: "assests/dumy13.jpg"
+        },
+        {
+            id: 5,
             name: "Baby Diaper Bag",
             price: "$459",
             category: "Bags",
             popular: true,
-            image: "assests/dummy03.png"
+            image: "assests/dumy14.jpg"
         },
         {
-            id: 4,
+            id: 6,
             name: "Baby Blanket",
             price: "$199",
             category: "Blankets",
             popular: false,
-            image: "assests/dummy03.png"
+            image: "assests/dumy15.jpg"
         },
         {
-            id: 5,
+            id: 7,
             name: "Bays Sunglasses",
             price: "$149",
             category: "Sunglasses",
             popular: true,
-            image: "assests/dummy03.png"
+            image: "assests/dumy17.jpg"
         },
         {
-            id: 6,
+            id: 8,
             name: "Baby gloves",
             price: "$79",
             category: "gloves",
             popular: false,
-            image: "assests/dummy03.png"
+            image: "assests/dumy16.jpg"
         }
     ];
 

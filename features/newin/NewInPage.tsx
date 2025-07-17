@@ -20,7 +20,7 @@ export default function NewInPage() {
             id: 'noah-collections',
             title: "Noah Collections",
             subtitle: "Curated pieces for modern lifestyle",
-            image: "assests/dummy03.png",
+            image: "assests/slider-img02.jpg",
             category: "Collections",
             type: 'medium'
         },
@@ -28,48 +28,14 @@ export default function NewInPage() {
             id: 'sale-collection',
             title: "Sale Collection",
             subtitle: "Up to 50% off selected items",
-            image: "assests/dummy03.png",
+            image: "assests/dummy10.jpg",
             category: "Sale",
             type: 'medium',
             badge: "SALE"
         }
     ];
 
-    const newProducts = [
-        {
-            id: 1,
-            name: "Premium Cotton Tee",
-            price: 29.99,
-            originalPrice: 39.99,
-            image: "assests/dummy03.png",
-            isNew: true,
-            category: "Tops"
-        },
-        {
-            id: 2,
-            name: "Casual Denim Jacket",
-            price: 89.99,
-            image: "assests/dummy03.png",
-            isNew: true,
-            category: "Outerwear"
-        },
-        {
-            id: 3,
-            name: "Comfort Fit Joggers",
-            price: 49.99,
-            image: "assests/dummy03.png",
-            isNew: true,
-            category: "Bottoms"
-        },
-        {
-            id: 4,
-            name: "Vintage Graphic Hoodie",
-            price: 69.99,
-            image: "assests/dummy03.png",
-            isNew: true,
-            category: "Hoodies"
-        }
-    ];
+
 
     const handleCardClick = (id: string) => {
         console.log(`Navigating to: ${id}`);
@@ -173,7 +139,7 @@ export default function NewInPage() {
                                         <p className="text-sm text-gray-200 mb-3">
                                             {item.subtitle}
                                         </p>
-                                        <button className="text-sm font-medium  hover:underline flex items-center gap-1 mx-auto">
+                                        <button className="text-sm font-medium p-2 common rounded hover:underline flex items-center gap-1 mx-auto">
                                             Shop Now
                                             <ArrowRight className="w-3 h-3" />
                                         </button>
