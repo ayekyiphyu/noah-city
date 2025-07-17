@@ -12,8 +12,8 @@ export default function FooterPage() {
     ];
 
     const categories = [
+        { name: 'Top', href: '#clothing/top' },
         { name: 'Bottom', href: '#clothing/bottom' },
-        { name: 'Top', href: '#clothing/outer' },
         { name: 'Family Sets', href: '#clothing/family-set' },
         { name: 'Sale Items', href: '#sale' },
     ];
