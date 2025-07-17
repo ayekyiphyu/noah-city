@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Heart, ShoppingBag } from 'lucide-react';
 
 export default function ClothingPage() {
 
@@ -47,33 +47,19 @@ export default function ClothingPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Header Section */}
-            <div className="bg-white py-12">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-5xl font-light text-gray-900 tracking-wide mb-4">
-                            NEW IN
-                        </h1>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Discover the latest arrivals and trending pieces in our curated collection
-                        </p>
-                    </div>
-                </div>
-            </div>
-
             {/* Featured Collections Layout */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {/* New Products Grid */}
                 <div>
                     <div className="flex items-center justify-between mb-8">
-                        <h2 className="text-2xl md:text-3xl font-light text-gray-900">
-                            Clothing
+                        <h2 className="text-2xl md:text-3xl font-light text-gray-900 ">
+                            CLOTHIN
                         </h2>
                         {/* later will be needs this view all links */}
-                        {/* <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center gap-2 transition-colors duration-200">
+                        <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center gap-2 transition-colors duration-200">
                             View All
                             <ArrowRight className="w-4 h-4" />
-                        </button> */}
+                        </button>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
