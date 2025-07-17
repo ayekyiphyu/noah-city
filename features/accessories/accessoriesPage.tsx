@@ -7,12 +7,12 @@ export default function AccessoriesPage() {
     const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
     const accessories = [
-        { id: 1, name: "Hat", price: "$299", category: "Jewelry", popular: true },
-        { id: 2, name: "Silk Scarf", price: "$89", category: "Scarves", popular: false },
-        { id: 3, name: "Leather Handbag", price: "$459", category: "Bags", popular: true },
-        { id: 4, name: "Gold Bracelet", price: "$199", category: "Jewelry", popular: false },
-        { id: 5, name: "Sunglasses", price: "$149", category: "Eyewear", popular: true },
-        { id: 6, name: "Cashmere Gloves", price: "$79", category: "Accessories", popular: false }
+        { id: 1, name: "Hat", price: "$299", category: "Jewelry", popular: true, image: "" },
+        { id: 2, name: "Silk Scarf", price: "$89", category: "Scarves", popular: false, image: "" },
+        { id: 3, name: "Leather Handbag", price: "$459", category: "Bags", popular: true, image: "" },
+        { id: 4, name: "Gold Bracelet", price: "$199", category: "Jewelry", popular: false, image: "" },
+        { id: 5, name: "Sunglasses", price: "$149", category: "Eyewear", popular: true, image: "" },
+        { id: 6, name: "Cashmere Gloves", price: "$79", category: "Accessories", popular: false, image: "" }
     ];
 
     return (
