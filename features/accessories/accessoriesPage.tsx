@@ -1,6 +1,6 @@
 'use client';
 
-import { Eye, Heart, Plus, ShoppingBag, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Eye, Heart, ShoppingBag, Sparkles, Star } from "lucide-react";
 import { useState } from "react";
 
 export default function AccessoriesPage() {
@@ -114,7 +114,7 @@ export default function AccessoriesPage() {
                                     </p>
 
                                     {/* Category Badge */}
-                                    <span className="px-2 sm:px-3 py-1 bg-purple-600 text-white rounded-full text-xs sm:text-sm font-medium">
+                                    <span className="px-2 sm:px-3 py-1 common text-white rounded-full text-xs sm:text-sm font-medium">
                                         {item.category}
                                     </span>
                                 </div>
@@ -150,12 +150,12 @@ export default function AccessoriesPage() {
 
                 {/* Load More Button */}
                 <div className="text-center mt-8 sm:mt-12 lg:mt-16">
-                    <button className="px-6 sm:px-8 py-3 sm:py-4 tertiary text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto text-sm sm:text-base">
-                        <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
-                        Load More Accessories
+                    <button className="px-6 sm:px-8 py-3 sm:py-4 common text-white rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto text-sm sm:text-base">
+                        Load More
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

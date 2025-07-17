@@ -114,8 +114,8 @@ export default function FooterPage() {
 
                 {/* Bottom Section (already centered on mobile) */}
                 <div className="border-t border-neutral-800 mt-12 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="text-white-500 text-sm text-center md:text-left">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+                        <p className="text-white-500 text-center text-sm text-center md:text-left">
                             &copy; {new Date().getFullYear()} Noah City. All rights reserved.
                         </p>
 
