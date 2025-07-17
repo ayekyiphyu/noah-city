@@ -10,7 +10,7 @@ export default function ClothingPage() {
             name: "Premium Cotton Tee",
             price: 29.99,
             originalPrice: 39.99,
-            image: "assests/dummy03.png",
+            image: "assests/dummy01.jpg",
             isNew: true,
             category: "Tops"
         },
@@ -18,7 +18,7 @@ export default function ClothingPage() {
             id: 2,
             name: "Casual Denim Jacket",
             price: 89.99,
-            image: "assests/dummy03.png",
+            image: "assests/dummy02.jpg",
             isNew: true,
             category: "Outerwear"
         },
@@ -26,7 +26,7 @@ export default function ClothingPage() {
             id: 3,
             name: "Comfort Fit Joggers",
             price: 49.99,
-            image: "assests/dummy03.png",
+            image: "assests/dummy04.jpg",
             isNew: true,
             category: "Bottoms"
         },
@@ -34,7 +34,7 @@ export default function ClothingPage() {
             id: 4,
             name: "Vintage Graphic Hoodie",
             price: 69.99,
-            image: "assests/dummy03.png",
+            image: "assests/dummy05.jpg",
             isNew: true,
             category: "Hoodies"
         }
