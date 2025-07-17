@@ -1,165 +1,88 @@
 'use client';
 
-import { ArrowRight, Facebook, Instagram, MailOpen, MapPinned, PhoneOutgoing } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 export default function FooterPage() {
-    const quickLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'New In', href: '#new' },
-        { name: 'Clothing', href: '#clothing' },
-        { name: 'Contact', href: '#contact' },
-    ];
-
-    const categories = [
-        { name: 'Bottom Wear', href: '#clothing/bottom' },
-        { name: 'Outer Wear', href: '#clothing/outer' },
-        { name: 'Family Sets', href: '#clothing/family-set' },
-        { name: 'Sale Items', href: '#sale' },
-    ];
-
-    const handleLinkClick = (href: string) => {
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
-        <footer className="w-full primary text-white">
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-                    {/* Brand Section */}
-                    <div className="md:col-span-1">
-                        <h3 className="text-2xl font-light mb-4 tracking-wide">NOAH CITY</h3>
-                        <p className="text-sm text-gray-400 tracking-wider uppercase mb-4">
-                            Lifestyle Boutique
-                        </p>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                            Your trusted destination for premium lifestyle clothing in Myanmar.
-                            Quality, comfort, and style for the whole family.
-                        </p>
+        <footer className="bg-neutral-900 text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-                        {/* Social Media Links */}
-                        <div className="flex space-x-3 justify-center md:justify-start">
-                            <a
-                                href="https://facebook.com/noahcity"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-200"
-                                aria-label="Follow us on Facebook"
-                            >
-                                <Facebook className="w-5 h-5" />
+                    {/* Column 1: Brand & Social */}
+                    <div className="md:col-span-1 text-center md:text-left"> {/* ADDED text-center md:text-left */}
+                        <h3 className="text-2xl font-bold mb-2">NOAH CITY</h3>
+                        <p className="text-gray-400 text-sm mb-4">
+                            Your destination for premium lifestyle clothing in Myanmar.
+                        </p>
+                        <div className="flex space-x-4 mt-6 justify-center md:justify-start"> {/* ADDED justify-center md:justify-start */}
+                            <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
+                                <Facebook size={20} />
                             </a>
-                            <a
-                                href="https://instagram.com/noahcitylifestyle"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors duration-200"
-                                aria-label="Follow us on Instagram"
-                            >
-                                <Instagram className="w-5 h-5" />
+                            <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors">
+                                <Instagram size={20} />
+                            </a>
+                            <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors">
+                                <Twitter size={20} />
                             </a>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
-                        <ul className="space-y-3 flex flex-col items-center md:items-start">
-                            {quickLinks.map((link) => (
-                                <li key={link.name}>
-                                    <button
-                                        onClick={() => handleLinkClick(link.href)}
-                                        className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center group text-sm"
-                                    >
-                                        <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                                        {link.name}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                    {/* Column 2: Shop Links */}
+                    <div className="text-center md:text-left"> {/* ADDED text-center md:text-left */}
+                        <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Shop</h4>
+                        <div className="space-y-3">
+                            <a href="/collections/men" className="block text-gray-400 hover:text-white transition-colors">Men</a>
+                            <a href="/collections/women" className="block text-gray-400 hover:text-white transition-colors">Women</a>
+                            <a href="/collections/kids" className="block text-gray-400 hover:text-white transition-colors">Kids</a>
+                            <a href="/collections/accessories" className="block text-gray-400 hover:text-white transition-colors">Accessories</a>
+                        </div>
                     </div>
 
-                    {/* Categories */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4 text-white">Categories</h4>
-                        <ul className="space-y-3 flex flex-col items-center md:items-start">
-                            {categories.map((category) => (
-                                <li key={category.name}>
-                                    <button
-                                        onClick={() => handleLinkClick(category.href)}
-                                        className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center group text-sm"
-                                    >
-                                        <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                                        {category.name}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                    {/* Column 3: Company Links */}
+                    <div className="text-center md:text-left"> {/* ADDED text-center md:text-left */}
+                        <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Company</h4>
+                        <div className="space-y-3">
+                            <a href="/about" className="block text-gray-400 hover:text-white transition-colors">About Us</a>
+                            <a href="/contact" className="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                            <a href="/blog" className="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                            <a href="/careers" className="block text-gray-400 hover:text-white transition-colors">Careers</a>
+                        </div>
                     </div>
 
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4 text-white">Contact Info</h4>
-                        <div className="space-y-3 flex flex-col items-center md:items-start">
-                            <div className="flex items-start space-x-3">
-                                <MapPinned className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
-                                <div>
-                                    <p className="text-gray-300 text-sm">Downtown Yangon</p>
-                                    <p className="text-gray-400 text-xs">Myanmar</p>
-                                </div>
+                    {/* Column 4: Contact Info */}
+                    <div className=" text-center md:text-left"> {/* ADDED text-center md:text-left */}
+                        <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Contact</h4>
+                        <div className="space-y-4 text-sm">
+                            <div className="flex items-start justify-center md:justify-start"> {/* ADDED justify-center md:justify-start */}
+                                <MapPin className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
+                                <span className="text-gray-400">Downtown Yangon, Myanmar</span>
                             </div>
-
-                            <div className="flex items-center space-x-3">
-                                <PhoneOutgoing className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                                <a
-                                    href="tel:+959123456789"
-                                    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
-                                >
+                            <div className="flex items-center justify-center md:justify-start"> {/* ADDED justify-center md:justify-start */}
+                                <Phone className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                                <a href="tel:+959123456789" className="text-gray-400 hover:text-white transition-colors">
                                     +95 9 123 456 789
                                 </a>
                             </div>
-
-                            <div className="flex items-center space-x-3">
-                                <MailOpen className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                                <a
-                                    href="mailto:info@noahcity.com"
-                                    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
-                                >
-                                    info@noahcity.com
+                            <div className="flex items-center justify-center md:justify-start"> {/* ADDED justify-center md:justify-start */}
+                                <Mail className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                                <a href="mailto:info@noahcity.com" className="text-gray-400 hover:text-white transition-colors">
+                                    xxxx@xxxx.gmail.com
                                 </a>
-                            </div>
-
-                            <div className="mt-4 pt-4 border-t border-white-700">
-                                <p className="text-gray-400 text-xs mb-1">Business Hours:</p>
-                                <p className="text-gray-300 text-sm">Mon - Sat: 9:00 AM - 7:00 PM</p>
-                                <p className="text-gray-300 text-sm">Sunday: 10:00 AM - 5:00 PM</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-
-
-                {/* Bottom Section */}
-                <div className="border-t border-white-700 mt-8 pt-8">
+                {/* Bottom Section (already centered on mobile) */}
+                <div className="border-t border-neutral-800 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <div className="text-center md:text-left">
-                            <p className="text-gray-400 text-sm">
-                                &copy; 2025 Noah City. All rights reserved.
-                            </p>
-                        </div>
-
+                        <p className="text-gray-500 text-sm text-center md:text-left">
+                            &copy; {new Date().getFullYear()} Noah City. All rights reserved.
+                        </p>
                         <div className="flex space-x-6 text-sm">
-                            <a href="#privacy" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                Privacy Policy
-                            </a>
-                            <a href="#terms" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                Terms of Service
-                            </a>
-                            <a href="#returns" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                Returns
-                            </a>
+                            <a href="#privacy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                            <a href="#terms" className="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
                         </div>
                     </div>
                 </div>
