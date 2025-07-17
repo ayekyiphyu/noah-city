@@ -5,6 +5,7 @@ import Header from "@/components/header/Header";
 import MainHeader from "@/components/navigation/Navigation";
 import SliderComponent from "@/components/slider/SliderComponent";
 import AccessoriesPage from "@/features/accessories/accessoriesPage";
+import ClothingPage from "@/features/clothing/ClothingPage";
 import NewInPage from "@/features/newin/NewInPage";
 import ShippingPage from "@/features/shipping/ShippingPage";
 import { ArrowRight } from "lucide-react";
@@ -60,7 +61,7 @@ export default function Home() {
                                     <ArrowRight className="w-4 h-4" />
                                 </button>
                                 <button
-                                    onClick={() => scrollToSection('#featured')}
+                                    onClick={() => scrollToSection('#clothing')}
                                     className="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors duration-200"
                                 >
                                     Explore Categories
@@ -76,11 +77,16 @@ export default function Home() {
                     </div>
                 </section>
 
+
+                <section id="clothing" className="clothing-section py-16 ">
+                    <ClothingPage />
+                </section>
+
                 <section id="accessories" className="w-full bg-white py-16">
                     <AccessoriesPage />
                 </section>
             </main>
             <FooterPage />
-        </div>
+        </div >
     );
 }

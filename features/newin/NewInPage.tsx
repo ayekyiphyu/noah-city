@@ -2,7 +2,6 @@
 
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import ClothingPage from '../clothing/ClothingPage';
 
 export default function NewInPage() {
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -154,9 +153,7 @@ export default function NewInPage() {
                     </div>
                 </div>
 
-                <div>
-                    <ClothingPage />
-                </div>
+
             </div>
         </div>
     );
