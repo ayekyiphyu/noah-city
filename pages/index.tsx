@@ -4,6 +4,7 @@ import FooterPage from "@/components/footer/FooterPage";
 import Header from "@/components/header/Header";
 import MainHeader from "@/components/navigation/Navigation";
 import SliderComponent from "@/components/slider/SliderComponent";
+import AccessoriesPage from "@/features/accessories/accessoriesPage";
 import NewInPage from "@/features/newin/NewInPage";
 import ShippingPage from "@/features/shipping/ShippingPage";
 import { ArrowRight } from 'lucide-react';
@@ -75,6 +76,10 @@ export default function Home() {
                     <div className="w-full max-w-7xl mx-auto">
                         <NewInPage />
                     </div>
+                </section>
+
+                <section id="accessories" className="w-full bg-white py-16">
+                    <AccessoriesPage />
                 </section>
             </main>
             <FooterPage />
