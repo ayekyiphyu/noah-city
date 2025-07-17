@@ -13,7 +13,7 @@ export default function AccessoriesPage() {
             price: "$299",
             category: "Jewelry",
             popular: true,
-            image: "assests/dummy03.jpg"
+            image: "assests/dummy03.png"
         },
         {
             id: 2,
@@ -21,7 +21,7 @@ export default function AccessoriesPage() {
             price: "$89",
             category: "Scarves",
             popular: false,
-            image: "assests/dummy03.jpg"
+            image: "assests/dummy03.png"
         },
         {
             id: 3,
@@ -29,7 +29,7 @@ export default function AccessoriesPage() {
             price: "$459",
             category: "Bags",
             popular: true,
-            image: "assests/dummy03.jpg"
+            image: "assests/dummy03.png"
         },
         {
             id: 4,
@@ -45,7 +45,7 @@ export default function AccessoriesPage() {
             price: "$149",
             category: "Sunglasses",
             popular: true,
-            image: "assests/dummy03.jpg"
+            image: "assests/dummy03.png"
         },
         {
             id: 6,
@@ -53,7 +53,7 @@ export default function AccessoriesPage() {
             price: "$79",
             category: "gloves",
             popular: false,
-            image: "assests/dummy03.jpg"
+            image: "assests/dummy03.png"
         }
     ];
 
