@@ -23,6 +23,11 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  * 
  */
 export type HeaderStatus = $Result.DefaultSelection<Prisma.$HeaderStatusPayload>
+/**
+ * Model QuickLink
+ * 
+ */
+export type QuickLink = $Result.DefaultSelection<Prisma.$QuickLinkPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -168,6 +173,16 @@ export class PrismaClient<
     * ```
     */
   get headerStatus(): Prisma.HeaderStatusDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.quickLink`: Exposes CRUD operations for the **QuickLink** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more QuickLinks
+    * const quickLinks = await prisma.quickLink.findMany()
+    * ```
+    */
+  get quickLink(): Prisma.QuickLinkDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -609,7 +624,8 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    HeaderStatus: 'HeaderStatus'
+    HeaderStatus: 'HeaderStatus',
+    QuickLink: 'QuickLink'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +644,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "headerStatus"
+      modelProps: "user" | "headerStatus" | "quickLink"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -780,6 +796,80 @@ export namespace Prisma {
           }
         }
       }
+      QuickLink: {
+        payload: Prisma.$QuickLinkPayload<ExtArgs>
+        fields: Prisma.QuickLinkFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.QuickLinkFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.QuickLinkFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          findFirst: {
+            args: Prisma.QuickLinkFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.QuickLinkFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          findMany: {
+            args: Prisma.QuickLinkFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>[]
+          }
+          create: {
+            args: Prisma.QuickLinkCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          createMany: {
+            args: Prisma.QuickLinkCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.QuickLinkCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>[]
+          }
+          delete: {
+            args: Prisma.QuickLinkDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          update: {
+            args: Prisma.QuickLinkUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          deleteMany: {
+            args: Prisma.QuickLinkDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.QuickLinkUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.QuickLinkUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>[]
+          }
+          upsert: {
+            args: Prisma.QuickLinkUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuickLinkPayload>
+          }
+          aggregate: {
+            args: Prisma.QuickLinkAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateQuickLink>
+          }
+          groupBy: {
+            args: Prisma.QuickLinkGroupByArgs<ExtArgs>
+            result: $Utils.Optional<QuickLinkGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.QuickLinkCountArgs<ExtArgs>
+            result: $Utils.Optional<QuickLinkCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -866,6 +956,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     user?: UserOmit
     headerStatus?: HeaderStatusOmit
+    quickLink?: QuickLinkOmit
   }
 
   /* Types for Logging */
@@ -2954,6 +3045,1035 @@ export namespace Prisma {
 
 
   /**
+   * Model QuickLink
+   */
+
+  export type AggregateQuickLink = {
+    _count: QuickLinkCountAggregateOutputType | null
+    _avg: QuickLinkAvgAggregateOutputType | null
+    _sum: QuickLinkSumAggregateOutputType | null
+    _min: QuickLinkMinAggregateOutputType | null
+    _max: QuickLinkMaxAggregateOutputType | null
+  }
+
+  export type QuickLinkAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type QuickLinkSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type QuickLinkMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    href: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type QuickLinkMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    href: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type QuickLinkCountAggregateOutputType = {
+    id: number
+    name: number
+    href: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type QuickLinkAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type QuickLinkSumAggregateInputType = {
+    id?: true
+  }
+
+  export type QuickLinkMinAggregateInputType = {
+    id?: true
+    name?: true
+    href?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type QuickLinkMaxAggregateInputType = {
+    id?: true
+    name?: true
+    href?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type QuickLinkCountAggregateInputType = {
+    id?: true
+    name?: true
+    href?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type QuickLinkAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which QuickLink to aggregate.
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of QuickLinks to fetch.
+     */
+    orderBy?: QuickLinkOrderByWithRelationInput | QuickLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: QuickLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` QuickLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` QuickLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned QuickLinks
+    **/
+    _count?: true | QuickLinkCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: QuickLinkAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: QuickLinkSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: QuickLinkMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: QuickLinkMaxAggregateInputType
+  }
+
+  export type GetQuickLinkAggregateType<T extends QuickLinkAggregateArgs> = {
+        [P in keyof T & keyof AggregateQuickLink]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateQuickLink[P]>
+      : GetScalarType<T[P], AggregateQuickLink[P]>
+  }
+
+
+
+
+  export type QuickLinkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: QuickLinkWhereInput
+    orderBy?: QuickLinkOrderByWithAggregationInput | QuickLinkOrderByWithAggregationInput[]
+    by: QuickLinkScalarFieldEnum[] | QuickLinkScalarFieldEnum
+    having?: QuickLinkScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: QuickLinkCountAggregateInputType | true
+    _avg?: QuickLinkAvgAggregateInputType
+    _sum?: QuickLinkSumAggregateInputType
+    _min?: QuickLinkMinAggregateInputType
+    _max?: QuickLinkMaxAggregateInputType
+  }
+
+  export type QuickLinkGroupByOutputType = {
+    id: number
+    name: string
+    href: string
+    createdAt: Date
+    updatedAt: Date
+    _count: QuickLinkCountAggregateOutputType | null
+    _avg: QuickLinkAvgAggregateOutputType | null
+    _sum: QuickLinkSumAggregateOutputType | null
+    _min: QuickLinkMinAggregateOutputType | null
+    _max: QuickLinkMaxAggregateOutputType | null
+  }
+
+  type GetQuickLinkGroupByPayload<T extends QuickLinkGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<QuickLinkGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof QuickLinkGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], QuickLinkGroupByOutputType[P]>
+            : GetScalarType<T[P], QuickLinkGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type QuickLinkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    href?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["quickLink"]>
+
+  export type QuickLinkSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    href?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["quickLink"]>
+
+  export type QuickLinkSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    href?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["quickLink"]>
+
+  export type QuickLinkSelectScalar = {
+    id?: boolean
+    name?: boolean
+    href?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type QuickLinkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "href" | "createdAt" | "updatedAt", ExtArgs["result"]["quickLink"]>
+
+  export type $QuickLinkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "QuickLink"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+      href: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["quickLink"]>
+    composites: {}
+  }
+
+  type QuickLinkGetPayload<S extends boolean | null | undefined | QuickLinkDefaultArgs> = $Result.GetResult<Prisma.$QuickLinkPayload, S>
+
+  type QuickLinkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<QuickLinkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: QuickLinkCountAggregateInputType | true
+    }
+
+  export interface QuickLinkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['QuickLink'], meta: { name: 'QuickLink' } }
+    /**
+     * Find zero or one QuickLink that matches the filter.
+     * @param {QuickLinkFindUniqueArgs} args - Arguments to find a QuickLink
+     * @example
+     * // Get one QuickLink
+     * const quickLink = await prisma.quickLink.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends QuickLinkFindUniqueArgs>(args: SelectSubset<T, QuickLinkFindUniqueArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one QuickLink that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {QuickLinkFindUniqueOrThrowArgs} args - Arguments to find a QuickLink
+     * @example
+     * // Get one QuickLink
+     * const quickLink = await prisma.quickLink.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends QuickLinkFindUniqueOrThrowArgs>(args: SelectSubset<T, QuickLinkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first QuickLink that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkFindFirstArgs} args - Arguments to find a QuickLink
+     * @example
+     * // Get one QuickLink
+     * const quickLink = await prisma.quickLink.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends QuickLinkFindFirstArgs>(args?: SelectSubset<T, QuickLinkFindFirstArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first QuickLink that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkFindFirstOrThrowArgs} args - Arguments to find a QuickLink
+     * @example
+     * // Get one QuickLink
+     * const quickLink = await prisma.quickLink.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends QuickLinkFindFirstOrThrowArgs>(args?: SelectSubset<T, QuickLinkFindFirstOrThrowArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more QuickLinks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all QuickLinks
+     * const quickLinks = await prisma.quickLink.findMany()
+     * 
+     * // Get first 10 QuickLinks
+     * const quickLinks = await prisma.quickLink.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const quickLinkWithIdOnly = await prisma.quickLink.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends QuickLinkFindManyArgs>(args?: SelectSubset<T, QuickLinkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a QuickLink.
+     * @param {QuickLinkCreateArgs} args - Arguments to create a QuickLink.
+     * @example
+     * // Create one QuickLink
+     * const QuickLink = await prisma.quickLink.create({
+     *   data: {
+     *     // ... data to create a QuickLink
+     *   }
+     * })
+     * 
+     */
+    create<T extends QuickLinkCreateArgs>(args: SelectSubset<T, QuickLinkCreateArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many QuickLinks.
+     * @param {QuickLinkCreateManyArgs} args - Arguments to create many QuickLinks.
+     * @example
+     * // Create many QuickLinks
+     * const quickLink = await prisma.quickLink.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends QuickLinkCreateManyArgs>(args?: SelectSubset<T, QuickLinkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many QuickLinks and returns the data saved in the database.
+     * @param {QuickLinkCreateManyAndReturnArgs} args - Arguments to create many QuickLinks.
+     * @example
+     * // Create many QuickLinks
+     * const quickLink = await prisma.quickLink.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many QuickLinks and only return the `id`
+     * const quickLinkWithIdOnly = await prisma.quickLink.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends QuickLinkCreateManyAndReturnArgs>(args?: SelectSubset<T, QuickLinkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a QuickLink.
+     * @param {QuickLinkDeleteArgs} args - Arguments to delete one QuickLink.
+     * @example
+     * // Delete one QuickLink
+     * const QuickLink = await prisma.quickLink.delete({
+     *   where: {
+     *     // ... filter to delete one QuickLink
+     *   }
+     * })
+     * 
+     */
+    delete<T extends QuickLinkDeleteArgs>(args: SelectSubset<T, QuickLinkDeleteArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one QuickLink.
+     * @param {QuickLinkUpdateArgs} args - Arguments to update one QuickLink.
+     * @example
+     * // Update one QuickLink
+     * const quickLink = await prisma.quickLink.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends QuickLinkUpdateArgs>(args: SelectSubset<T, QuickLinkUpdateArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more QuickLinks.
+     * @param {QuickLinkDeleteManyArgs} args - Arguments to filter QuickLinks to delete.
+     * @example
+     * // Delete a few QuickLinks
+     * const { count } = await prisma.quickLink.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends QuickLinkDeleteManyArgs>(args?: SelectSubset<T, QuickLinkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more QuickLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many QuickLinks
+     * const quickLink = await prisma.quickLink.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends QuickLinkUpdateManyArgs>(args: SelectSubset<T, QuickLinkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more QuickLinks and returns the data updated in the database.
+     * @param {QuickLinkUpdateManyAndReturnArgs} args - Arguments to update many QuickLinks.
+     * @example
+     * // Update many QuickLinks
+     * const quickLink = await prisma.quickLink.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more QuickLinks and only return the `id`
+     * const quickLinkWithIdOnly = await prisma.quickLink.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends QuickLinkUpdateManyAndReturnArgs>(args: SelectSubset<T, QuickLinkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one QuickLink.
+     * @param {QuickLinkUpsertArgs} args - Arguments to update or create a QuickLink.
+     * @example
+     * // Update or create a QuickLink
+     * const quickLink = await prisma.quickLink.upsert({
+     *   create: {
+     *     // ... data to create a QuickLink
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the QuickLink we want to update
+     *   }
+     * })
+     */
+    upsert<T extends QuickLinkUpsertArgs>(args: SelectSubset<T, QuickLinkUpsertArgs<ExtArgs>>): Prisma__QuickLinkClient<$Result.GetResult<Prisma.$QuickLinkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of QuickLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkCountArgs} args - Arguments to filter QuickLinks to count.
+     * @example
+     * // Count the number of QuickLinks
+     * const count = await prisma.quickLink.count({
+     *   where: {
+     *     // ... the filter for the QuickLinks we want to count
+     *   }
+     * })
+    **/
+    count<T extends QuickLinkCountArgs>(
+      args?: Subset<T, QuickLinkCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], QuickLinkCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a QuickLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends QuickLinkAggregateArgs>(args: Subset<T, QuickLinkAggregateArgs>): Prisma.PrismaPromise<GetQuickLinkAggregateType<T>>
+
+    /**
+     * Group by QuickLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuickLinkGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends QuickLinkGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: QuickLinkGroupByArgs['orderBy'] }
+        : { orderBy?: QuickLinkGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, QuickLinkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetQuickLinkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the QuickLink model
+   */
+  readonly fields: QuickLinkFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for QuickLink.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__QuickLinkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the QuickLink model
+   */
+  interface QuickLinkFieldRefs {
+    readonly id: FieldRef<"QuickLink", 'Int'>
+    readonly name: FieldRef<"QuickLink", 'String'>
+    readonly href: FieldRef<"QuickLink", 'String'>
+    readonly createdAt: FieldRef<"QuickLink", 'DateTime'>
+    readonly updatedAt: FieldRef<"QuickLink", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * QuickLink findUnique
+   */
+  export type QuickLinkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter, which QuickLink to fetch.
+     */
+    where: QuickLinkWhereUniqueInput
+  }
+
+  /**
+   * QuickLink findUniqueOrThrow
+   */
+  export type QuickLinkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter, which QuickLink to fetch.
+     */
+    where: QuickLinkWhereUniqueInput
+  }
+
+  /**
+   * QuickLink findFirst
+   */
+  export type QuickLinkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter, which QuickLink to fetch.
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of QuickLinks to fetch.
+     */
+    orderBy?: QuickLinkOrderByWithRelationInput | QuickLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for QuickLinks.
+     */
+    cursor?: QuickLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` QuickLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` QuickLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of QuickLinks.
+     */
+    distinct?: QuickLinkScalarFieldEnum | QuickLinkScalarFieldEnum[]
+  }
+
+  /**
+   * QuickLink findFirstOrThrow
+   */
+  export type QuickLinkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter, which QuickLink to fetch.
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of QuickLinks to fetch.
+     */
+    orderBy?: QuickLinkOrderByWithRelationInput | QuickLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for QuickLinks.
+     */
+    cursor?: QuickLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` QuickLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` QuickLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of QuickLinks.
+     */
+    distinct?: QuickLinkScalarFieldEnum | QuickLinkScalarFieldEnum[]
+  }
+
+  /**
+   * QuickLink findMany
+   */
+  export type QuickLinkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter, which QuickLinks to fetch.
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of QuickLinks to fetch.
+     */
+    orderBy?: QuickLinkOrderByWithRelationInput | QuickLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing QuickLinks.
+     */
+    cursor?: QuickLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` QuickLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` QuickLinks.
+     */
+    skip?: number
+    distinct?: QuickLinkScalarFieldEnum | QuickLinkScalarFieldEnum[]
+  }
+
+  /**
+   * QuickLink create
+   */
+  export type QuickLinkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * The data needed to create a QuickLink.
+     */
+    data: XOR<QuickLinkCreateInput, QuickLinkUncheckedCreateInput>
+  }
+
+  /**
+   * QuickLink createMany
+   */
+  export type QuickLinkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many QuickLinks.
+     */
+    data: QuickLinkCreateManyInput | QuickLinkCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * QuickLink createManyAndReturn
+   */
+  export type QuickLinkCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * The data used to create many QuickLinks.
+     */
+    data: QuickLinkCreateManyInput | QuickLinkCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * QuickLink update
+   */
+  export type QuickLinkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * The data needed to update a QuickLink.
+     */
+    data: XOR<QuickLinkUpdateInput, QuickLinkUncheckedUpdateInput>
+    /**
+     * Choose, which QuickLink to update.
+     */
+    where: QuickLinkWhereUniqueInput
+  }
+
+  /**
+   * QuickLink updateMany
+   */
+  export type QuickLinkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update QuickLinks.
+     */
+    data: XOR<QuickLinkUpdateManyMutationInput, QuickLinkUncheckedUpdateManyInput>
+    /**
+     * Filter which QuickLinks to update
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * Limit how many QuickLinks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * QuickLink updateManyAndReturn
+   */
+  export type QuickLinkUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * The data used to update QuickLinks.
+     */
+    data: XOR<QuickLinkUpdateManyMutationInput, QuickLinkUncheckedUpdateManyInput>
+    /**
+     * Filter which QuickLinks to update
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * Limit how many QuickLinks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * QuickLink upsert
+   */
+  export type QuickLinkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * The filter to search for the QuickLink to update in case it exists.
+     */
+    where: QuickLinkWhereUniqueInput
+    /**
+     * In case the QuickLink found by the `where` argument doesn't exist, create a new QuickLink with this data.
+     */
+    create: XOR<QuickLinkCreateInput, QuickLinkUncheckedCreateInput>
+    /**
+     * In case the QuickLink was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<QuickLinkUpdateInput, QuickLinkUncheckedUpdateInput>
+  }
+
+  /**
+   * QuickLink delete
+   */
+  export type QuickLinkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+    /**
+     * Filter which QuickLink to delete.
+     */
+    where: QuickLinkWhereUniqueInput
+  }
+
+  /**
+   * QuickLink deleteMany
+   */
+  export type QuickLinkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which QuickLinks to delete
+     */
+    where?: QuickLinkWhereInput
+    /**
+     * Limit how many QuickLinks to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * QuickLink without action
+   */
+  export type QuickLinkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the QuickLink
+     */
+    select?: QuickLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the QuickLink
+     */
+    omit?: QuickLinkOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -2982,6 +4102,17 @@ export namespace Prisma {
   };
 
   export type HeaderStatusScalarFieldEnum = (typeof HeaderStatusScalarFieldEnum)[keyof typeof HeaderStatusScalarFieldEnum]
+
+
+  export const QuickLinkScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    href: 'href',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type QuickLinkScalarFieldEnum = (typeof QuickLinkScalarFieldEnum)[keyof typeof QuickLinkScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3038,6 +4169,20 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -3141,6 +4286,60 @@ export namespace Prisma {
     title?: StringWithAggregatesFilter<"HeaderStatus"> | string
   }
 
+  export type QuickLinkWhereInput = {
+    AND?: QuickLinkWhereInput | QuickLinkWhereInput[]
+    OR?: QuickLinkWhereInput[]
+    NOT?: QuickLinkWhereInput | QuickLinkWhereInput[]
+    id?: IntFilter<"QuickLink"> | number
+    name?: StringFilter<"QuickLink"> | string
+    href?: StringFilter<"QuickLink"> | string
+    createdAt?: DateTimeFilter<"QuickLink"> | Date | string
+    updatedAt?: DateTimeFilter<"QuickLink"> | Date | string
+  }
+
+  export type QuickLinkOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    href?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuickLinkWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: QuickLinkWhereInput | QuickLinkWhereInput[]
+    OR?: QuickLinkWhereInput[]
+    NOT?: QuickLinkWhereInput | QuickLinkWhereInput[]
+    name?: StringFilter<"QuickLink"> | string
+    href?: StringFilter<"QuickLink"> | string
+    createdAt?: DateTimeFilter<"QuickLink"> | Date | string
+    updatedAt?: DateTimeFilter<"QuickLink"> | Date | string
+  }, "id">
+
+  export type QuickLinkOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    href?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: QuickLinkCountOrderByAggregateInput
+    _avg?: QuickLinkAvgOrderByAggregateInput
+    _max?: QuickLinkMaxOrderByAggregateInput
+    _min?: QuickLinkMinOrderByAggregateInput
+    _sum?: QuickLinkSumOrderByAggregateInput
+  }
+
+  export type QuickLinkScalarWhereWithAggregatesInput = {
+    AND?: QuickLinkScalarWhereWithAggregatesInput | QuickLinkScalarWhereWithAggregatesInput[]
+    OR?: QuickLinkScalarWhereWithAggregatesInput[]
+    NOT?: QuickLinkScalarWhereWithAggregatesInput | QuickLinkScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"QuickLink"> | number
+    name?: StringWithAggregatesFilter<"QuickLink"> | string
+    href?: StringWithAggregatesFilter<"QuickLink"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"QuickLink"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"QuickLink"> | Date | string
+  }
+
   export type UserCreateInput = {
     email: string
     name?: string | null
@@ -3210,6 +4409,59 @@ export namespace Prisma {
   export type HeaderStatusUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type QuickLinkCreateInput = {
+    name: string
+    href: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuickLinkUncheckedCreateInput = {
+    id?: number
+    name: string
+    href: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuickLinkUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    href?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuickLinkUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    href?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuickLinkCreateManyInput = {
+    id?: number
+    name: string
+    href: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuickLinkUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    href?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuickLinkUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    href?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -3359,6 +4611,63 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type QuickLinkCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    href?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuickLinkAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type QuickLinkMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    href?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuickLinkMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    href?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuickLinkSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -3373,6 +4682,10 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3484,6 +4797,31 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
 

@@ -5,17 +5,17 @@ import { ArrowRight, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "l
 export default function FooterPage() {
 
     const quickLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'New In', href: '#new' },
-        { name: 'Clothing', href: '#clothing' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Home', href: '' },
+        { name: 'New In', href: '' },
+        { name: 'Clothing', href: '' },
+        { name: 'Contact', href: '' },
     ];
 
     const categories = [
-        { name: 'Top', href: '#clothing/top' },
-        { name: 'Bottom', href: '#clothing/bottom' },
-        { name: 'Family Sets', href: '#clothing/family-set' },
-        { name: 'Sale Items', href: '#sale' },
+        { name: 'Top', href: '' },
+        { name: 'Bottom', href: '' },
+        { name: 'Family Sets', href: '' },
+        { name: 'Sale Items', href: '' },
     ];
 
 

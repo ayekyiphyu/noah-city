@@ -131,6 +131,14 @@ exports.Prisma.HeaderStatusScalarFieldEnum = {
   title: 'title'
 };
 
+exports.Prisma.QuickLinkScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  href: 'href',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -149,7 +157,8 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  HeaderStatus: 'HeaderStatus'
+  HeaderStatus: 'HeaderStatus',
+  QuickLink: 'QuickLink'
 };
 
 /**
