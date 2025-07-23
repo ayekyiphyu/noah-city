@@ -15,10 +15,11 @@ export default function ShippingPage() {
             description: "Premium materials with 30-day warranty"
         },
         {
+
             icon: RefreshCw,
-            title: "Easy Returns",
-            description: "Hassle-free returns within 7 days"
-        }
+            title: "Easy to Wear",
+            description: "Made from the best cotton, flexible and safe for babies"
+        }    
     ];
 
 
