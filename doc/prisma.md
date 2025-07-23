@@ -16,5 +16,26 @@ npx prisma init
 ## Initialize Prisma
 
 ```bash
+create .env.local
+or
+create .env
+```
+
+## how to run prisma
+
+```bash
 create env.local
+```
+
+## push changes
+
+```bash
+npx prisma db push
+```
+
+## Check what's currently in your database
+
+```bash
+npx prisma studio
+
 ```

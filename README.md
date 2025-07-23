@@ -2,6 +2,12 @@
 
 A fullstack Next.js application for a local Myanmar baby clothing business specializing in baby boy apparel.
 
+#### Warning
+
+※ This time, I will release Feature #3 (updated version).
+※ Do not copy. This content is copyrighted by AYE KYI PHYU.
+※ Currently used for our Myanmar local branch baby clothing website.
+
 ## Tech Stack
 
 - **Frontend**: Next.js 14+ with React
@@ -41,12 +47,14 @@ Single-page application with the following sections:
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone [your-repo-url]
 cd baby-clothing-website
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 # or
@@ -56,10 +64,13 @@ pnpm install
 ```
 
 3. Set up environment variables
+
 ```bash
 cp .env.example .env.local
 ```
+
 Add your environment variables:
+
 ```
 DATABASE_URL=""
 NEXTAUTH_SECRET=""
@@ -67,6 +78,7 @@ EMAIL_SERVICE_API_KEY=""
 ```
 
 4. Run the development server
+
 ```bash
 npm run dev
 # or
@@ -110,6 +122,7 @@ npm run lint:fix     # Fix ESLint issues
 ## Database Schema
 
 ### Products
+
 - id (Primary Key)
 - name (String)
 - description (Text)
@@ -120,6 +133,7 @@ npm run lint:fix     # Fix ESLint issues
 - inStock (Boolean)
 
 ### Contact Messages
+
 - id (Primary Key)
 - name (String)
 - email (String)
@@ -130,12 +144,14 @@ npm run lint:fix     # Fix ESLint issues
 ## Deployment
 
 ### Vercel (Recommended)
+
 1. Push code to GitHub
 2. Connect repository to Vercel
 3. Configure environment variables
 4. Deploy automatically
 
 ### Manual Deployment
+
 ```bash
 npm run build
 npm run start
