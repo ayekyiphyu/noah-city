@@ -11,6 +11,13 @@ export interface NavigationItem {
   submenu?: { name: string; href: string }[];
 }
 
+//Header 
+
+export interface HeadeStaus {
+  id:number
+  title: string;
+}
+
 export interface Product {
   id: string;
   name: string;
