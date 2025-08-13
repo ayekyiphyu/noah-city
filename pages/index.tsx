@@ -2,6 +2,7 @@
 
 import FooterPage from "@/components/footer/FooterPage";
 import Header from "@/components/header/Header";
+import AdvancedMessenger from "@/components/messenger";
 import MainHeader from "@/components/navigation/Navigation";
 import SliderComponent from "@/components/slider/SliderComponent";
 import AccessoriesPage from "@/features/accessories/accessoriesPage";
@@ -85,6 +86,7 @@ export default function Home() {
                 <section id="accessories" className="w-full bg-white py-16">
                     <AccessoriesPage />
                 </section>
+               
             </main>
             <FooterPage />
         </div >
